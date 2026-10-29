@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+# Personal drafts you never want committed (e.g. employer-specific tweaks)
+resumes/private/
+resumes/support-engineer.md
+resumes/software-engineer.md
+
+# Yarn 4 (keep config, ignore caches and install state)
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.pnp.*

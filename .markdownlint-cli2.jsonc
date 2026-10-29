@@ -1,0 +1,16 @@
+{
+  // General Markdown hygiene. Resume-specific ATS rules live in src/validate/rules.js.
+  "config": {
+    "default": true,
+    // Line length: resumes wrap however you like.
+    "MD013": false,
+    // Inline HTML: our validator reports this with a resume-specific message.
+    "MD033": false,
+    // Bare URLs/emails: visible addresses are exactly what an ATS needs.
+    "MD034": false,
+    // Allow "### Job Title" directly above "**Employer** | dates".
+    "MD022": { "lines_above": 1, "lines_below": -1 },
+    // First line must be a top-level heading (your name).
+    "MD041": true
+  }
+}

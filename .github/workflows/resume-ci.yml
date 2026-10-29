@@ -1,0 +1,38 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: resume-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Must come before setup-node: its yarn cache step runs `yarn`, which
+      # only resolves to the Yarn 4 version pinned in package.json once
+      # Corepack is enabled.
+      - name: Enable Corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      # --immutable fails if yarn.lock is out of date (Yarn's version of npm ci).
+      # Also downloads the headless Chrome that Puppeteer uses for PDFs.
+      - run: yarn install --immutable
+
+      - name: Unit tests
+        run: yarn test

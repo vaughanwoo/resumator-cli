@@ -1,0 +1,33 @@
+{
+  "name": "resumator",
+  "version": "0.1.0",
+  "description": "Markdown-first resume builder with ATS formatting checks and DOCX, PDF, and offline HTML exports.",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "Vaughan Woolsey",
+  "bin": "bin/resumator.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "resumator": "node bin/resumator.js",
+    "lint:md": "markdownlint-cli2 \"resumes/**/*.md\"",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "docx": "^9.14.0",
+    "jszip": "^3.10.2",
+    "markdown-it": "^15.0.3",
+    "puppeteer": "^25"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.22.1"
+  },
+  "packageManager": "yarn@4.18.1+sha512.b2e1e7524f654f2749d32b4ebcb4622473cb5bcbc485df2007e12a154e50162a4d795526768bc5f5b8f81717bfd79deb2472813d86fb5ae2eb551fa9c872b08f",
+  "dependenciesMeta": {
+    "puppeteer": {
+      "built": true
+    }
+  }
+}

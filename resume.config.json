@@ -1,0 +1,16 @@
+{
+  "defaults": {
+    "template": "classic",
+    "outputDir": "dist",
+    "filename": "{target}-{timestamp}",
+    "formats": ["html", "pdf", "docx", "zip"],
+    "pageSize": "Letter",
+    "requiredSections": ["experience", "education", "skills"]
+  },
+  "resumes": {
+    "support-engineer": {
+      "title": "Support Engineer",
+      "source": "resumes/support-engineer.md"
+    }
+  }
+}
