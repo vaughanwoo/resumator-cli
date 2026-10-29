@@ -57,7 +57,8 @@ ul { margin: 0.2rem 0 0.4rem; padding-left: 1.1rem; }
 li { margin: 0.1rem 0; }
 a { color: inherit; }
 
-section { break-inside: auto; }
+/* Keep sections together when they fit; longer sections may still span pages. */
+section { break-inside: avoid-page; }
 h2, h3 { break-after: avoid; }
 li { break-inside: avoid; }
 

@@ -8,6 +8,7 @@ import { VALID } from "./helpers.js";
 test("HTML export is self-contained", () => {
   const html = renderHtml(VALID);
   assert.match(html, /<style>/);
+  assert.match(html, /section \{\s*break-inside: avoid-page;/);
   assert.doesNotMatch(html, /<link[^>]+stylesheet/);
   assert.doesNotMatch(html, /<script/);
   assert.doesNotMatch(html, /src="https?:/);
